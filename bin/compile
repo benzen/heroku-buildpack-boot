@@ -59,8 +59,7 @@ if [ ! -r "$BOOT_SH_CACHE_PATH" ]; then
     echo "-----> Installing Boot ${BOOT_SH_VERSION} from github..."
     echo "       Downloading boot.sh from ${BOOT_SH_URL}"
     curl -L -s -o "$BOOT_SH_CACHE_PATH" "$BOOT_SH_URL"
-    mv boot.sh boot
-    chmod a+x boot
+    chmod a+x "$BOOT_SH_CACHE_PATH"
     echo "       ...done"
 else
     echo "-----> Using cached Boot"
