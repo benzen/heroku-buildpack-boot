@@ -89,7 +89,7 @@ fi
 
 if [ "$BUILD_COMMAND" = "" ]; then
     echo "      No BUILD_COMMAND found, defaulting to boot build"
-    $BUILD_COMMAND = "build"
+    BUILD_COMMAND = "build"
 fi
 
 echo "       Running: $BUILD_COMMAND"
