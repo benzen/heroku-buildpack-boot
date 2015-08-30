@@ -88,12 +88,14 @@ if [ "$BUILD_COMMAND" = "" ]; then
 fi
 
 if [ "$BUILD_COMMAND" = "" ]; then
-    echo "      No BUILD_COMMAND found, skipping to Procfile"
-else
-    echo "       Running: $BUILD_COMMAND"
-    cd $BUILD_DIR
-    $BUILD_COMMAND 2>&1 | sed -u 's/^/       /'
+    echo "      No BUILD_COMMAND found, defaulting to `boot build`"
+    $BUILD_COMMAND = "build"
 fi
+
+echo "       Running: $BUILD_COMMAND"
+cd $BUILD_DIR
+$BUILD_COMMAND 2>&1 | sed -u 's/^/       /'
+
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
   echo " !     Failed to build."
   exit 1
