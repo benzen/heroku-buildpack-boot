@@ -39,7 +39,7 @@ curl --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common --st
 javaVersion=$(detect_java_version ${BUILD_DIR})
 echo -n "-----> Installing OpenJDK ${javaVersion}..."
 install_java ${BUILD_DIR} ${javaVersion}
-jdk_overlay ${BUILD_DIR}
+#jdk_overlay ${BUILD_DIR}
 echo "done"
 
 get_latest_boot_version() {
